@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
     private ViewFlipper viewFlipper;
     private TextView chatDisplay, mathLog;
     private EditText userInput, trainingDataInput;
-    private Button btnTrain, btnBackToChat;
+    private Button btnSend, btnOpenTraining, btnTrain, btnBackToChat;
     private ProgressBar trainingProgress;
     private ScrollView chatScroll;
 
@@ -61,8 +61,8 @@ public class MainActivity extends AppCompatActivity {
         viewFlipper = findViewById(R.id.viewFlipper);
         chatDisplay = findViewById(R.id.chatDisplay);
         userInput = findViewById(R.id.userInput);
-        Button btnSend = findViewById(R.id.btnSend);
-        Button btnOpenTraining = findViewById(R.id.btnOpenTraining);
+        btnSend = findViewById(R.id.btnSend);
+        btnOpenTraining = findViewById(R.id.btnOpenTraining);
         chatScroll = findViewById(R.id.chatScroll);
 
         trainingDataInput = findViewById(R.id.trainingDataInput);
