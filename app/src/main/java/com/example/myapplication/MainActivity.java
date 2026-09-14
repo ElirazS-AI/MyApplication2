@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
     private ViewFlipper viewFlipper;
     private TextView chatDisplay, mathLog;
     private EditText userInput, trainingDataInput;
-    private Button btnSend, btnOpenTraining, btnTrain, btnBackToChat;
+    private Button btnTrain, btnBackToChat;
     private ProgressBar trainingProgress;
     private ScrollView chatScroll;
 
@@ -61,8 +61,8 @@ public class MainActivity extends AppCompatActivity {
         viewFlipper = findViewById(R.id.viewFlipper);
         chatDisplay = findViewById(R.id.chatDisplay);
         userInput = findViewById(R.id.userInput);
-        btnSend = findViewById(R.id.btnSend);
-        btnOpenTraining = findViewById(R.id.btnOpenTraining);
+        Button btnSend = findViewById(R.id.btnSend);
+        Button btnOpenTraining = findViewById(R.id.btnOpenTraining);
         chatScroll = findViewById(R.id.chatScroll);
 
         trainingDataInput = findViewById(R.id.trainingDataInput);
@@ -141,7 +141,7 @@ public class MainActivity extends AppCompatActivity {
 
             int epochs = 100;
             int e = 1;
-            while (e <= epochs) {
+            do {
                 double loss = Math.abs(random.nextGaussian() / e);
 
                 if (e % 20 == 0) {
@@ -157,7 +157,7 @@ public class MainActivity extends AppCompatActivity {
                     Thread.currentThread().interrupt();
                 }
                 e++;
-            }
+            } while (e <= epochs);
 
             isTrained = true;
 
@@ -185,14 +185,16 @@ public class MainActivity extends AppCompatActivity {
         for (String qw : queryWords) {
             if (qw.length() <= 2) continue;
 
-            for (int i = 0; i < trainedWords.size() - 1; i++) {
+            int i = 0;
+            while (i < trainedWords.size() - 1) {
                 if (Objects.equals(trainedWords.get(i), qw)) {
-                    String next1 = trainedWords.get(i+1);
-                    String next2 = (i+2 < trainedWords.size()) ? trainedWords.get(i+2) : "";
-                    String next3 = (i+3 < trainedWords.size()) ? trainedWords.get(i+3) : "";
+                    String next1 = trainedWords.get(i + 1);
+                    String next2 = (i + 2 < trainedWords.size()) ? trainedWords.get(i + 2) : "";
+                    String next3 = (i + 3 < trainedWords.size()) ? trainedWords.get(i + 3) : "";
 
                     return getString(R.string.model_context_response, qw, next1, next2, next3);
                 }
+                i++;
             }
         }
         return getString(R.string.model_no_match);

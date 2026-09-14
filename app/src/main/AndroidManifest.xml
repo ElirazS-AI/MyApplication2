@@ -12,7 +12,7 @@
         <activity
             android:name=".LobbyActivity"
             android:exported="true"
-            android:screenOrientation="landscape">
+            android:screenOrientation="userLandscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -21,22 +21,22 @@
 
         <activity
             android:name=".GameActivity"
-            android:screenOrientation="landscape" />
+            android:screenOrientation="userLandscape" />
         <activity
             android:name=".MainActivity"
-            android:screenOrientation="landscape" />
+            android:screenOrientation="userLandscape" />
         <activity
             android:name=".ShopActivity"
-            android:screenOrientation="landscape" />
+            android:screenOrientation="userLandscape" />
         <activity
             android:name=".BrawlerSelectionActivity"
-            android:screenOrientation="landscape" />
+            android:screenOrientation="userLandscape" />
         <activity
             android:name=".TrophyRoadActivity"
-            android:screenOrientation="landscape" />
+            android:screenOrientation="userLandscape" />
         <activity
             android:name=".ModeSelectionActivity"
-            android:screenOrientation="landscape" />
+            android:screenOrientation="userLandscape" />
     </application>
 
 </manifest>

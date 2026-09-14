@@ -251,15 +251,16 @@ public class GameActivity extends AppCompatActivity {
         Enemy nearestTarget = null;
         float minDist = Float.MAX_VALUE;
         for (Enemy e : enemies) {
-            if (e.team == playerTeam) continue;
-            float d = distSq(imgPlayer, e.view);
-            if (d < minDist) {
-                minDist = d;
-                nearestTarget = e;
+            if (e.team != playerTeam) {
+                float d = distSq(imgPlayer, e.view);
+                if (d < minDist) {
+                    minDist = d;
+                    nearestTarget = e;
+                }
             }
         }
         
-        Enemy finalTarget = nearestTarget;
+        final Enemy finalTarget = nearestTarget;
         float tx = finalTarget != null ? finalTarget.view.getX() + 45 : imgPlayer.getX() + 500;
         float ty = finalTarget != null ? finalTarget.view.getY() + 45 : imgPlayer.getY();
         
@@ -387,8 +388,11 @@ public class GameActivity extends AppCompatActivity {
         if (Math.abs(x - 1500) < 300 && Math.abs(y - 1500) < 300) x += 600;
         v.setX(x); v.setY(y); v.setTag(tag);
         gameArena.addView(v);
-        if ("water".equals(tag)) waterTiles.add(v);
-        else obstacles.add(v);
+        if ("water".equals(tag)) {
+            waterTiles.add(v);
+        } else {
+            obstacles.add(v);
+        }
     }
 
     private void applyModeSettings() {
