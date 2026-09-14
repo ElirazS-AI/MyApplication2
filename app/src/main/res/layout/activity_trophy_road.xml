@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#1B1D2A"
+    android:padding="20dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/trophy_road_title"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="20dp"/>
+
+    <TextView
+        android:id="@+id/tvTrophyProgress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/your_trophies_placeholder"
+        android:textColor="#FFEB3B"
+        android:textSize="18sp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="20dp"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView android:layout_width="match_parent" android:layout_height="50dp" android:text="@string/reward_50_trophies" android:textColor="#FFFFFF" android:gravity="center_vertical"/>
+            <TextView android:layout_width="match_parent" android:layout_height="50dp" android:text="@string/reward_100_trophies" android:textColor="#FFFFFF" android:gravity="center_vertical"/>
+            <TextView android:layout_width="match_parent" android:layout_height="50dp" android:text="@string/reward_200_trophies" android:textColor="#FFFFFF" android:gravity="center_vertical"/>
+            <TextView android:layout_width="match_parent" android:layout_height="50dp" android:text="@string/reward_300_trophies" android:textColor="#FFFFFF" android:gravity="center_vertical"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/back_button"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"/>
+
+</LinearLayout>

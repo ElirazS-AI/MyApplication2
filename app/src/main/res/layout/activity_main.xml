@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#05050A">
+
+    <LinearLayout
+        android:id="@+id/matrixBackground"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:weightSum="4"
+        android:padding="20dp"
+        android:clickable="false"
+        android:focusable="false"
+        android:importantForAccessibility="no">
+
+        <View android:id="@+id/line1" android:layout_width="2dp" android:layout_height="150dp" android:layout_weight="1" android:background="#00E676" android:alpha="0"/>
+        <View android:id="@+id/line2" android:layout_width="2dp" android:layout_height="150dp" android:layout_weight="1" android:background="#00E676" android:alpha="0"/>
+        <View android:id="@+id/line3" android:layout_width="2dp" android:layout_height="150dp" android:layout_weight="1" android:background="#00E676" android:alpha="0"/>
+        <View android:id="@+id/line4" android:layout_width="2dp" android:layout_height="150dp" android:layout_weight="1" android:background="#00E676" android:alpha="0"/>
+    </LinearLayout>
+
+    <ViewFlipper
+        android:id="@+id/viewFlipper"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp">
+
+            <RelativeLayout
+                android:id="@+id/chatHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="@string/chat_title"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+                <Button
+                    android:id="@+id/btnOpenTraining"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:backgroundTint="#1E1E2E"
+                    android:text="@string/settings_emoji"
+                    android:contentDescription="@string/settings_label"
+                    android:textColor="#00E676"/>
+            </RelativeLayout>
+
+            <ScrollView
+                android:id="@+id/chatScroll"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/inputLayout"
+                android:layout_below="@+id/chatHeader"
+                android:layout_marginBottom="16dp">
+                <TextView
+                    android:id="@+id/chatDisplay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#E0E0E0"
+                    android:textSize="16sp"
+                    android:text="@string/chat_model_greeting" />
+            </ScrollView>
+
+            <LinearLayout
+                android:id="@+id/inputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:orientation="horizontal">
+                <EditText
+                    android:id="@+id/userInput"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#1E1E2E"
+                    android:hint="@string/chat_hint"
+                    android:importantForAutofill="no"
+                    android:inputType="text"
+                    android:textColorHint="#888899"
+                    android:textColor="#FFFFFF"
+                    android:padding="16dp"
+                    android:layout_marginEnd="8dp" />
+                <Button
+                    android:id="@+id/btnSend"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:backgroundTint="#00B0FF"
+                    android:contentDescription="@string/send_label"
+                    android:text="@string/send_emoji" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp"
+            android:background="#CC05050A">
+
+            <RelativeLayout
+                android:id="@+id/trainHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp">
+                <Button
+                    android:id="@+id/btnBackToChat"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentStart="true"
+                    android:backgroundTint="#1E1E2E"
+                    android:text="@string/back_emoji"
+                    android:contentDescription="@string/back_button"
+                    android:textColor="#00B0FF"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="@string/train_title"
+                    android:textColor="#00E676"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <EditText
+                android:id="@+id/trainingDataInput"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_below="@+id/trainHeader"
+                android:background="#1E1E2E"
+                android:textColor="#FFFFFF"
+                android:hint="@string/train_hint"
+                android:importantForAutofill="no"
+                android:inputType="textMultiLine"
+                android:textColorHint="#666677"
+                android:padding="12dp"
+                android:gravity="top"
+                android:layout_marginBottom="12dp" />
+
+            <ProgressBar
+                android:id="@+id/trainingProgress"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/trainingDataInput"
+                android:layout_marginBottom="12dp"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/btnTrain"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_alignParentBottom="true"
+                android:text="@string/train_button"
+                android:backgroundTint="#00E676"
+                android:textColor="#05050A"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginTop="12dp" />
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/trainingProgress"
+                android:layout_above="@+id/btnTrain"
+                android:background="#0A0A10">
+                <TextView
+                    android:id="@+id/mathLog"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#00E676"
+                    android:textSize="12sp"
+                    android:fontFamily="monospace"
+                    android:padding="12dp"
+                    android:text="@string/train_log_initial" />
+            </ScrollView>
+
+        </RelativeLayout>
+    </ViewFlipper>
+</FrameLayout>

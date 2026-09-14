@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#1B1D2A"
+    android:padding="20dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/select_brawler_title"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="20dp"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:id="@+id/brawlerList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Brawlers will be added dynamically or manually -->
+            <Button
+                android:id="@+id/btnBrawler0"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:text="@string/brawler_shapey_info"
+                android:layout_marginBottom="10dp"/>
+
+            <Button
+                android:id="@+id/btnBrawler1"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:text="@string/brawler_tanker_info"
+                android:layout_marginBottom="10dp"/>
+
+            <Button
+                android:id="@+id/btnBrawler2"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:text="@string/brawler_sniper_info"
+                android:layout_marginBottom="10dp"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/back_button"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"/>
+
+</LinearLayout>

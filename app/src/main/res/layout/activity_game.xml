@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1B1D2A">
+
+    <!-- ===== זירת המשחק (בכל המסך) ===== -->
+    <FrameLayout
+        android:id="@+id/gameArena"
+        android:layout_width="3000dp"
+        android:layout_height="3000dp"
+        android:background="#1B1D2A"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <!-- הוספת רשת רקע כדי להרגיש תנועה -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0.1"
+            android:background="@android:drawable/edit_text"/>
+
+        <!-- שכבת רעל דינמית (עברה לתוך ה-Arena) -->
+        <com.example.myapplication.SafeZoneView
+            android:id="@+id/safeZoneView"
+            android:layout_width="3000dp"
+            android:layout_height="3000dp"
+            android:visibility="gone"/>
+
+        <!-- השחקן שלך -->
+        <ImageView
+            android:id="@+id/imgPlayer"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_launcher_foreground"
+            android:background="#00B4D8"
+            android:layout_gravity="top|start"
+            android:contentDescription="@string/character_description" />
+
+    </FrameLayout>
+
+    <!-- הודעות מרכזיות (Showdown, Rank) -->
+    <TextView
+        android:id="@+id/tvGameMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/showdown_text"
+        android:textColor="#FFEB3B"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        android:shadowColor="#000000"
+        android:shadowDx="5"
+        android:shadowDy="5"
+        android:shadowRadius="5"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Kill Feed Container -->
+    <LinearLayout
+        android:id="@+id/killFeedContainer"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="60dp"
+        android:layout_marginStart="10dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <!-- סרגל עליון שקוף (Overlay) -->
+    <LinearLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:background="#44000000"
+        android:gravity="center_vertical"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tvScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/players_left_label"
+            android:textColor="#FFD700"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:layout_marginStart="20dp"/>
+
+        <View android:layout_width="0dp" android:layout_height="1dp" android:layout_weight="1"/>
+
+        <LinearLayout
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginEnd="20dp">
+
+            <ProgressBar
+                android:id="@+id/pbPlayerHp"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:max="100"
+                android:progress="100"
+                android:progressDrawable="@android:drawable/progress_horizontal" />
+
+            <ProgressBar
+                android:id="@+id/pbExp"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="4dp"
+                android:layout_marginTop="2dp"
+                android:max="100"
+                android:progress="0"
+                android:progressTint="#00E676" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- ג'ויסטיק בצד שמאל למטה -->
+    <com.example.myapplication.JoystickView
+        android:id="@+id/joystick"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- כפתורי פעולה בצד ימין למטה -->
+    <LinearLayout
+        android:id="@+id/controlsLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="30dp"
+        android:gravity="bottom"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- מד תחמושת וירייה -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="8dp">
+                <View android:id="@+id/ammo1" android:layout_width="25dp" android:layout_height="6dp" android:background="#03A9F4" android:layout_marginEnd="2dp"/>
+                <View android:id="@+id/ammo2" android:layout_width="25dp" android:layout_height="6dp" android:background="#03A9F4" android:layout_marginEnd="2dp"/>
+                <View android:id="@+id/ammo3" android:layout_width="25dp" android:layout_height="6dp" android:background="#03A9F4"/>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnShoot"
+                android:layout_width="85dp"
+                android:layout_height="85dp"
+                android:text="@string/fire_label"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:backgroundTint="#FF4757"
+                android:shape="oval"/>
+        </LinearLayout>
+
+        <!-- כפתור אולטי -->
+        <Button
+            android:id="@+id/btnUlti"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:layout_marginStart="20dp"
+            android:text="@string/ulti_label"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:backgroundTint="#FFD700"
+            android:textColor="#000000"
+            android:alpha="0.5"
+            android:enabled="false" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

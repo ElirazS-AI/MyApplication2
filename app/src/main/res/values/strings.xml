@@ -1,0 +1,98 @@
+<resources>
+    <string name="app_name">Brawl Shapes</string>
+    <string name="brawl_shapes_title">BRAWL SHAPES</string>
+    <string name="ready_for_battle">Ready for Battle!</string>
+    <string name="play_button">Play</string>
+    <string name="shop_button">Shop</string>
+    <string name="box_button">BOX</string>
+    <string name="brawler_button">Brawler</string>
+    <string name="trophy_road_button">Trophy Road</string>
+    <string name="event_label">EVENT</string>
+
+    <string name="mode_solo">Solo Showdown</string>
+    <string name="mode_classic">Classic Brawl</string>
+    <string name="mode_duo">Duo Showdown</string>
+    <string name="mode_3v3">3 vs 3 Team</string>
+    <string name="mode_5v5">5 vs 5 War</string>
+    <string name="mode_boss">Boss Fight</string>
+
+    <string name="select_brawler_title">Select Brawler</string>
+    <string name="back_button">Back</string>
+    <string name="settings_label">Settings</string>
+    <string name="send_label">Send</string>
+    <string name="coins_label">Coins: %1$d</string>
+    <string name="gems_label">Gems: %1$d</string>
+    <string name="trophies_display">🏆 %1$d</string>
+    <string name="gems_display">💎 %1$d</string>
+
+    <string name="players_left_label">Players Left: %1$d</string>
+    <string name="rank_message">Rank: #%1$d (%2$s%3$d 🏆)</string>
+    <string name="box_opened_message">BOX OPENED!\n+%1$d Coins\n+%2$d Gems</string>
+    <string name="need_coins_message">Need 100 Coins to open a box!</string>
+
+    <string name="upgrade_purchased">Upgrade Purchased!</string>
+    <string name="not_enough_coins">Not enough coins!</string>
+    <string name="health_upgrade_label">Health (+20)</string>
+    <string name="damage_upgrade_label">Damage (+1)</string>
+    <string name="speed_upgrade_label">Speed (+0.5)</string>
+    <string name="buy_button_label">Buy (%1$d)</string>
+    <string name="back_to_lobby">Back to Lobby</string>
+
+    <string name="brawler_selected">Brawler Selected!</string>
+    <string name="collect_trophies_unlock">Collect more trophies to unlock!</string>
+    <string name="your_trophies_label">Your Trophies: %1$d</string>
+
+    <string name="brawler_shapey_info">Shapey (Default)\nHP: 100 | DMG: 1 | SPD: 12</string>
+    <string name="brawler_tanker_info">Tanker (100 🏆)\nHP: 200 | DMG: 1 | SPD: 8</string>
+    <string name="brawler_sniper_info">Sniper (300 🏆)\nHP: 80 | DMG: 2 | SPD: 14</string>
+
+    <string name="showdown_text">SHOWDOWN!</string>
+    <string name="brawler_eliminated">Brawler eliminated!</string>
+    <string name="ally_defeated">Ally defeated!</string>
+    <string name="enemy_eliminated">Enemy eliminated!</string>
+    <string name="power_up_toast">Power Up! (Cubes: %1$d)</string>
+
+    <string name="star_emoji">⭐</string>
+    <string name="settings_emoji">⚙️</string>
+    <string name="send_emoji">➤</string>
+    <string name="back_emoji">◀</string>
+    <string name="select_mode_title">Select Game Mode</string>
+    <string name="mode_solo_desc">Solo Showdown\n(Gas ON)</string>
+    <string name="mode_classic_desc">Classic Brawl\n(No Gas)</string>
+    <string name="mode_duo_desc">Duo\n(2 vs 2 vs…)</string>
+    <string name="mode_3v3_desc">3 vs 3\n(Team Fight)</string>
+    <string name="mode_5v5_desc">5 vs 5\n(Big War)</string>
+    <string name="mode_boss_desc">Boss Fight\n(3 vs Giant)</string>
+    <string name="trophy_road_title">Trophy Road</string>
+    <string name="your_trophies_placeholder">Your Trophies: 0</string>
+    <string name="reward_50_trophies">50 🏆 -> 100 Coins</string>
+    <string name="reward_100_trophies">100 🏆 -> Unlock Tanker</string>
+    <string name="reward_200_trophies">200 🏆 -> 10 Gems</string>
+    <string name="reward_300_trophies">300 🏆 -> Unlock Sniper</string>
+    <string name="character_description">Brawler character icon</string>
+
+    <string name="star_power_label">Star Power</string>
+    <string name="chat_title">Neural Core Chat</string>
+    <string name="chat_model_greeting">המודל: שלום! לחץ על גלגל השיניים למעלה כדי לאמן אותי.\n\n</string>
+    <string name="chat_hint">שאל את המודל…</string>
+    <string name="train_title">אימון מודל מקומי</string>
+    <string name="train_hint">הכנס עובדות ונתונים לכאן…</string>
+    <string name="train_button">התחל אימון (TRAIN)</string>
+    <string name="train_log_initial">יומן חישובים וגרדיאנטים…</string>
+    <string name="chat_you_label">אתה: %1$s\n</string>
+    <string name="chat_model_label">המודל: %1$s\n\n</string>
+    <string name="train_toast_empty">הזן נתונים בתיבה קודם!</string>
+    <string name="train_log_start">>> מתחיל עיבוד טקסט ויצירת טנזורים…\n</string>
+    <string name="train_log_epoch">Epoch %1$d/100\nLoss: %2$s\nAdamW מעדכן וקטורים.\n---\n</string>
+    <string name="train_complete_msg">המודל: סיימתי את תהליך הלמידה בהצלחה! שאל אותי שאלות על החומר החדש.\n\n</string>
+    <string name="model_not_trained">עדיין לא אימנת אותי. לחץ על גלגל השיניים למעלה.</string>
+    <string name="model_context_response">ממה שלמדתי, ההקשר של \'%1$s\' מתחבר ל: %2$s %3$s %4$s</string>
+    <string name="model_no_match">לא מצאתי קשר מדויק למילה הזו במטריצת הקשב שלי.</string>
+    <string name="raid_boss_label">RAID BOSS</string>
+    <string name="ally_label">ALLY</string>
+    <string name="damage_dealt_label">-%1$d</string>
+    <string name="searching_players">Searching (%1$d/10)…</string>
+    <string name="brawl_start">Brawl!</string>
+    <string name="fire_label">Fire</string>
+    <string name="ulti_label">ULTI</string>
+</resources>

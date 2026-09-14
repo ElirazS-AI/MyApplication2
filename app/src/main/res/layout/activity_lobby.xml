@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1E1E2C">
+
+    <!-- סרגל עליון: גביעים ויהלומים -->
+    <LinearLayout
+        android:id="@+id/topStats"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tvTrophies"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/trophies_display"
+            android:textColor="#FFEB3B"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginStart="10dp"/>
+
+        <View android:layout_width="0dp" android:layout_height="1dp" android:layout_weight="1"/>
+
+        <TextView
+            android:id="@+id/tvGems"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/gems_display"
+            android:textColor="#00E676"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginEnd="10dp"/>
+    </LinearLayout>
+
+    <!-- תיבת אירוע (בחירת מפה/מצב) בצד שמאל -->
+    <LinearLayout
+        android:id="@+id/eventBox"
+        android:layout_width="160dp"
+        android:layout_height="100dp"
+        android:orientation="vertical"
+        android:background="#33FFFFFF"
+        android:padding="8dp"
+        android:gravity="center"
+        android:layout_marginStart="20dp"
+        app:layout_constraintVertical_bias="0.2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/event_label"
+            android:textColor="#FF9800"
+            android:textSize="12sp"
+            android:textStyle="bold"/>
+
+        <Button
+            android:id="@+id/btnSelectMode"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/mode_solo"
+            android:textSize="14sp"
+            android:backgroundTint="#FF9800"
+            android:padding="2dp"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/brawl_shapes_title"
+        android:textColor="#FFD700"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/topStats"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/imgMyCharacter"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:src="@drawable/ic_launcher_foreground"
+        android:background="#00B4D8"
+        android:contentDescription="@string/brawler_button"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle"
+        app:layout_constraintBottom_toTopOf="@id/tvStatus"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- כפתור Star Power ליד הדמות -->
+    <Button
+        android:id="@+id/btnStarPower"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:text="@string/star_emoji"
+        android:contentDescription="@string/star_power_label"
+        android:textSize="20sp"
+        android:backgroundTint="#FFD700"
+        android:layout_marginStart="10dp"
+        app:layout_constraintTop_toTopOf="@id/imgMyCharacter"
+        app:layout_constraintStart_toEndOf="@id/imgMyCharacter" />
+
+    <TextView
+        android:id="@+id/tvStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ready_for_battle"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toTopOf="@id/btnStartMatch"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- כפתור בחירת דמות -->
+    <Button
+        android:id="@+id/btnSelectBrawler"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:text="@string/brawler_button"
+        android:textSize="14sp"
+        android:backgroundTint="#03A9F4"
+        android:layout_marginStart="20dp"
+        app:layout_constraintBottom_toBottomOf="@id/imgMyCharacter"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- כפתור דרך הגביעים -->
+    <Button
+        android:id="@+id/btnTrophyRoad"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:text="@string/trophy_road_button"
+        android:textSize="14sp"
+        android:backgroundTint="#9C27B0"
+        app:layout_constraintTop_toBottomOf="@id/imgMyCharacter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/btnStartMatch"
+        android:layout_width="250dp"
+        android:layout_height="65dp"
+        android:text="@string/play_button"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:backgroundTint="#FF3D00"
+        android:elevation="10dp"
+        android:layout_marginBottom="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/btnShop"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:text="@string/shop_button"
+        android:backgroundTint="#FFD700"
+        android:textColor="#000000"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- כפתור תיבת בראול -->
+    <Button
+        android:id="@+id/btnBrawlBox"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:text="@string/box_button"
+        android:backgroundTint="#FF5722"
+        android:textColor="#FFFFFF"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

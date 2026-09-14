@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#1B1D2A"
+    android:padding="20dp"
+    android:gravity="center_horizontal">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/select_mode_title"
+        android:textColor="#FFFFFF"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="20dp"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:alignmentMode="alignMargins"
+            android:padding="10dp">
+
+            <Button
+                android:id="@+id/modeSolo"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="5dp"
+                android:text="@string/mode_solo_desc"
+                android:backgroundTint="#FF5722"/>
+
+            <Button
+                android:id="@+id/modeClassic"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="5dp"
+                android:text="@string/mode_classic_desc"
+                android:backgroundTint="#2196F3"/>
+
+            <Button
+                android:id="@+id/modeDuo"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="5dp"
+                android:text="@string/mode_duo_desc"
+                android:backgroundTint="#4CAF50"/>
+
+            <Button
+                android:id="@+id/mode3v3"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="5dp"
+                android:text="@string/mode_3v3_desc"
+                android:backgroundTint="#9C27B0"/>
+
+            <Button
+                android:id="@+id/mode5v5"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="5dp"
+                android:text="@string/mode_5v5_desc"
+                android:backgroundTint="#E91E63"/>
+
+            <Button
+                android:id="@+id/modeBoss"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="5dp"
+                android:text="@string/mode_boss_desc"
+                android:backgroundTint="#FFD700"
+                android:textColor="#000000"/>
+
+        </GridLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/back_button"
+        android:layout_marginTop="10dp"/>
+
+</LinearLayout>

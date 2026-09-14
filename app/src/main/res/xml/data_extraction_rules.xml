@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data-extraction-rules>
+    <cloud-backup>
+        <!-- Control what is backed up to the cloud. -->
+        <include domain="sharedpref" path="."/>
+        <exclude domain="sharedpref" path="device_id.xml"/>
+    </cloud-backup>
+    <device-transfer>
+        <!-- Control what is backed up during device-to-device transfer. -->
+        <include domain="sharedpref" path="."/>
+    </device-transfer>
+</data-extraction-rules>
